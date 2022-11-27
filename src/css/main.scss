@@ -1,0 +1,175 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap');
+
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+img {
+	max-width: 100%;
+	display: block;
+}
+
+a {
+	text-decoration: none;
+}
+
+:root {
+	--clr-bg-body: #0d1a2d;
+	--clr-bg-main: #0c1729;
+	--clr-bg-card: #14273e;
+	--clr-line: #2f415b;
+	--clr-soft-blue: #8bacda;
+	--clr-cyan: #00fff7;
+}
+
+$mediaMinWidth_desktop: 768px;
+
+body {
+	font-family: 'Outfit', sans-serif;
+	background: var(--clr-bg-body);
+	font-size: 0.7rem;
+}
+
+main {
+	padding: 1em;
+	background: var(--clr-bg-main);
+}
+
+.container {
+	position: relative;
+	width: 100%;
+	width: 235px;
+	margin-inline: auto;
+}
+
+.card {
+	background: var(--clr-bg-card);
+	color: var(--clr-soft-blue);
+	padding: 1em;
+	border-radius: 0.5em;
+	display: grid;
+	gap: 1em;
+
+
+	&__image-wrapper {
+		position: relative;
+		border-radius: 0.5em;
+		overflow: hidden;
+		cursor: pointer;
+
+		.card__image--middle-layer {
+			position: absolute;
+			top: 0;
+			height: 100%;
+			width: 100%;
+			background: var(--clr-cyan);
+			opacity: 0;
+		}
+
+		.card__image--eye {
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+			opacity: 0;
+		}
+
+		&:hover {
+			.card__image--middle-layer {
+				opacity: 0.5;
+			}
+
+			.card__image--eye {
+				opacity: 1;
+			}
+		}
+	}
+
+
+
+
+	&__text-content {
+		display: grid;
+		gap: 1em;
+	}
+
+	&__heading {
+		color: #fff;
+		font-size: 1rem;
+	}
+
+	&__price-days-left-wrapper {
+		display: flex;
+		justify-content: space-between;
+	}
+
+	&__price,
+	&__days-left {
+		display: flex;
+		align-items: center;
+		gap: 0.5em;
+	}
+
+	&__price {
+		color: var(--clr-cyan);
+		font-weight: bold;
+
+		img {
+			width: 7px;
+		}
+	}
+
+	&__days-left {
+		img {
+			font-size: 0.4rem;
+			width: 10px;
+		}
+	}
+
+
+	&__creation-of {
+		display: flex;
+		align-items: center;
+		gap: 0.5em;
+		border-top: solid 1px var(--clr-line);
+		padding-top: 1em;
+
+		img {
+			height: 25px;
+			border: solid 1px var(--clr-soft-blue);
+			border-radius: 50%;
+		}
+
+		&__name {
+			color: #fff;
+
+			&:hover {
+				color: var(--clr-cyan);
+				cursor: pointer;
+			}
+		}
+	}
+
+
+}
+
+footer {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	font-size: 0.8rem;
+	background: #fff;
+	padding: 1.3rem;
+	text-align: center;
+
+	a {
+		color: blue;
+
+		&:hover {
+			text-decoration: underline;
+		}
+	}
+}
